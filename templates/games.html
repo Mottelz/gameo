@@ -1,4 +1,5 @@
-{% include 'parts/header.html' %}
+{% extends 'skeleton.html' %}
+{% block body %}
 <h1>{{title}}</h1>
 
 <ul class="collapsible popout">
@@ -14,4 +15,4 @@
     </li>
     {% endfor %}
 </ul>
-{% include 'parts/footer.html' %}
+{% endblock %}
