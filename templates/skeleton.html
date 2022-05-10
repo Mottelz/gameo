@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        {% block body %} {% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}" rel="script"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, null);
+        });
+    </script>
+</body>
+</html>
