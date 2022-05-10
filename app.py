@@ -21,3 +21,8 @@ def list_games():
 @app.errorhandler(404)
 def page_missing(e):
     return render_template('page.html', title='404', msg=str(e))
+
+
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
