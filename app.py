@@ -9,11 +9,6 @@ db.init_app(app)
 
 @app.route('/')
 def home():
-    return redirect(url_for('games'))
-
-
-@app.route('/games')
-def list_games():
     games = Game.query.order_by(Game.name).all()
     return render_template('games.html', title="Games", games=games)
 
