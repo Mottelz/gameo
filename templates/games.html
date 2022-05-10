@@ -1,0 +1,17 @@
+{% include 'parts/header.html' %}
+<h1>{{title}}</h1>
+
+<ul class="collapsible popout">
+    {% for game in games %}
+    <li>
+        <div class="collapsible-header">{{game.name}} ({{game.published}}) | <i class="material-icons">group</i> {{game.minplayers}}-{{game.maxplayers}} | <i class="material-icons">timer</i> {{game.minplaytime}}-{{game.maxplaytime}} </div>
+        <div class="collapsible-body">
+        <div class="row">
+            <div class="col m2 s12"><img src="{{game.thumbnail | safe}}" alt="{{game.name}}" class="responsive-img"></div>
+            <div class="col m10 s12"><p>{{game.description | safe}}</p></div>
+        </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% include 'parts/footer.html' %}
